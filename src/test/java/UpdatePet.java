@@ -32,7 +32,8 @@ public class UpdatePet {
         myPet.setName(newName);
         RestAssured.given()
                 .contentType(ContentType.JSON)
-                .body(myPet).put("https://petstore.swagger.io/v2/pet").then().statusCode(200).body(Matchers.containsString(newName));
+                .body(myPet).put("https://petstore.swagger.io/v2/pet")
+                .then().statusCode(200).body(Matchers.containsString(newName));
 
     }
 
